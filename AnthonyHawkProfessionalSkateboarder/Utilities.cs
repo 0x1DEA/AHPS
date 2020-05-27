@@ -29,11 +29,18 @@ namespace AnthonyHawkProfessionalSkateboarder
         /**
          * Prompt user for input, returns their response
          */
-        public static string Prompt(string text = "")
+        public static string Prompt(string text = "", bool bare = false)
         {
             if (!text.Equals(""))
             {
-                text = "(" + text + ") ";
+                if (bare)
+                {
+                    text = text + " ";
+                }
+                else
+                {
+                    text = "(" + text + ")";
+                }
             }
     
             Console.Write(text + "> ");
@@ -49,14 +56,19 @@ namespace AnthonyHawkProfessionalSkateboarder
             switch (type)
             {
                 case ChoiceType.Boolean:
-                    if (bool.TryParse(Prompt("true|false"), out var input))
+                    string response;
+                    bool did = false;
+                    do
                     {
-                        Display(input ? "You did it!\n" : "You didn't do it.\n");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You must write 'true' or 'false'");
-                    }
+                        response = Prompt("[y/n]", true);
+                        if (response.ToLower().Contains("y"))
+                        {
+                            did = true;
+                        }
+
+                    } while (response.Equals(""));
+
+                    Display(did ? "\nYou did it!" : "\nYou didn't do it.");
                     break;
                 case ChoiceType.NumberRange:
                     Console.Write("(" + min + "-" + max + ") >");
