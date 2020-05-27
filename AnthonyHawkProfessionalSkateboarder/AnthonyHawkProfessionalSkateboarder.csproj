@@ -47,14 +47,14 @@
     <ItemGroup>
       <Content Include="choices.txt" />
       <Content Include="events.txt" />
+      <Content Include="menu.txt" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.-->
     <Target Name="BeforeBuild">
-        <!--<Exec Command="xcopy"/>-->
+        <RemoveDir Directories="$(BaseIntermediateOutputPath) $(BaseOutputPath)" />
     </Target>
     <Target Name="AfterBuild">
+        <Exec Command="xcopy /y $(ProjectDir)*.txt  $(ProjectDir)$(OutDir)" />
     </Target>
 
 </Project>
