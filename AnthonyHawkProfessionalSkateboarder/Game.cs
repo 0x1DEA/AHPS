@@ -18,7 +18,7 @@ namespace AnthonyHawkProfessionalSkateboarder
         {
             Playing = true;
             Console.Clear();
-            Utilities.Display("Press ENTER to advance text. Type 'exit' to return to the main menu.\n");
+            Utilities.Display("Press ENTER to advance text. Type 'exit' to return to the main menu.");
             Utilities.Display("You are skateboarding.");
 
             while (Playing)
@@ -29,10 +29,10 @@ namespace AnthonyHawkProfessionalSkateboarder
             Menu.Show();
         }
 
-        private void RandomEvent()
+        private static void RandomEvent()
         {
-            Random rnd = new Random();
-            if (rnd.Next(0, 2) == 1)
+            var rnd = new Random();
+            if (rnd.Next(0, 5) == 0)
             {
                 Utilities.Choice(_choices[rnd.Next(0, _choices.Length)], Utilities.ChoiceType.Boolean);
             }

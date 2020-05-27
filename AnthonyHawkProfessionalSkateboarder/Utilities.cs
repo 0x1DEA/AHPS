@@ -33,10 +33,10 @@ namespace AnthonyHawkProfessionalSkateboarder
         {
             if (!text.Equals(""))
             {
-                text = "(" + text + ")";
+                text = "(" + text + ") ";
             }
     
-            Console.Write(text + " > ");
+            Console.Write(text + "> ");
             return Console.ReadLine();
         }
     
@@ -57,7 +57,6 @@ namespace AnthonyHawkProfessionalSkateboarder
                     {
                         Console.WriteLine("You must write 'true' or 'false'");
                     }
-    
                     break;
                 case ChoiceType.NumberRange:
                     Console.Write("(" + min + "-" + max + ") >");
