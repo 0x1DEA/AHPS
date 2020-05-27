@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AnthonyHawkProfessionalSkateboarder
+﻿namespace AHPS
 {
     public class Game
     {
@@ -19,7 +17,7 @@ namespace AnthonyHawkProfessionalSkateboarder
             Playing = true;
             int actions = 0;
 
-            Console.Clear();
+            System.Console.Clear();
             Utilities.Display("Press ENTER to advance text. Type 'exit' to return to the main menu.");
 
             while (Playing)
@@ -38,8 +36,8 @@ namespace AnthonyHawkProfessionalSkateboarder
             }
             else
             {
-                var rnd = new Random();
-                if (rnd.Next(0, 5) == 0)
+                var rnd = new System.Random();
+                if (rnd.Next(0, 3) == 0)
                 {
                     Utilities.Choice(_choices[rnd.Next(0, _choices.Length)], Utilities.ChoiceType.Boolean);
                 }

@@ -1,6 +1,6 @@
-﻿namespace AnthonyHawkProfessionalSkateboarder
+﻿namespace AHPS
 {
-    internal class Program
+    internal static class Program
     {
         public static Game Game;
 
@@ -8,5 +8,6 @@
         {
             Menu.Show();
         }
+        
     }
 }

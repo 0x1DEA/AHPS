@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AnthonyHawkProfessionalSkateboarder
+﻿namespace AHPS
 {
     public static class Utilities
     {
@@ -9,8 +7,8 @@ namespace AnthonyHawkProfessionalSkateboarder
          */
         public static void AnyKey()
         {
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
+            System.Console.WriteLine("Press any key to continue...");
+            System.Console.ReadKey();
         }
     
         /**
@@ -18,8 +16,8 @@ namespace AnthonyHawkProfessionalSkateboarder
          */
         public static void Display(string text)
         {
-            Console.WriteLine(text);
-            var input = Console.ReadLine() ?? "" ;
+            System.Console.WriteLine(text);
+            var input = System.Console.ReadLine() ?? "" ;
             if (input.Equals("exit"))
             {
                 Game.Playing = false;
@@ -43,8 +41,8 @@ namespace AnthonyHawkProfessionalSkateboarder
                 }
             }
     
-            Console.Write(text + "> ");
-            return Console.ReadLine();
+            System.Console.Write(text + "> ");
+            return System.Console.ReadLine();
         }
     
         /**
@@ -52,7 +50,7 @@ namespace AnthonyHawkProfessionalSkateboarder
          */
         public static void Choice(string text, ChoiceType type, int min = 0, int max = 0)
         {
-            Console.WriteLine(text);
+            System.Console.WriteLine(text);
             switch (type)
             {
                 case ChoiceType.Boolean:
@@ -71,13 +69,14 @@ namespace AnthonyHawkProfessionalSkateboarder
                     Display(did ? "\nYou did it!" : "\nYou didn't do it.");
                     break;
                 case ChoiceType.NumberRange:
-                    Console.Write("(" + min + "-" + max + ") >");
+                    System.Console.Write("(" + min + "-" + max + ") >");
                     break;
                 case ChoiceType.String:
-                    Console.Write("(string) > ");
+                    System.Console.Write("(string) > ");
                     break;
                 default:
-                    throw new ArgumentException("Parameter 'type' cannot be null");
+                    System.Console.WriteLine("Error: parameter 'type' does not match recognizable 'ChoiceType'");
+                    break;
             }
         }
         
@@ -93,7 +92,7 @@ namespace AnthonyHawkProfessionalSkateboarder
          */
         public static void Close()
         {
-            Environment.Exit(1);
+            System.Environment.Exit(1);
         }
     }
 }
