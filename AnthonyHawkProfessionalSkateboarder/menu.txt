@@ -1,0 +1,21 @@
+﻿           88                                 
+           88                                 
+           88                                 
+,adPPYYba, 88,dPPYba,  8b,dPPYba,  ,adPPYba,  
+""     `Y8 88P'    "8a 88P'    "8a I8[    ""  
+,adPPPPP88 88       88 88       d8  `"Y8ba,   
+88,    ,88 88       88 88b,   ,a8" aa    ]8I  
+`"8bbdP"Y8 88       88 88`YbbdP"'  `"YbbdP"'  
+                       88                     
+                       88  
+                        
+    Anthony Hawk Professional Skateboarder
+                v0.1.1-alpha
+
+            ┌──────────────────┐
+            │   1. Play Game   │
+            │   2. Options     │
+            │   3. Exit        │
+            └──────────────────┘
+
+Input a number 1-3:

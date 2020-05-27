@@ -17,28 +17,36 @@ namespace AnthonyHawkProfessionalSkateboarder
         public void Start()
         {
             Playing = true;
+            int actions = 0;
+
             Console.Clear();
             Utilities.Display("Press ENTER to advance text. Type 'exit' to return to the main menu.");
-            Utilities.Display("You are skateboarding.");
 
             while (Playing)
             {
-                RandomEvent();
+                RandomEvent(actions++);
             }
 
             Menu.Show();
         }
 
-        private static void RandomEvent()
+        private static void RandomEvent(int actions)
         {
-            var rnd = new Random();
-            if (rnd.Next(0, 5) == 0)
+            if (actions == 0)
             {
-                Utilities.Choice(_choices[rnd.Next(0, _choices.Length)], Utilities.ChoiceType.Boolean);
+                Utilities.Display("You are skateboarding.");
             }
             else
             {
-                Utilities.Display(_events[rnd.Next(0, _choices.Length)]);
+                var rnd = new Random();
+                if (rnd.Next(0, 5) == 0)
+                {
+                    Utilities.Choice(_choices[rnd.Next(0, _choices.Length)], Utilities.ChoiceType.Boolean);
+                }
+                else
+                {
+                    Utilities.Display(_events[rnd.Next(0, _choices.Length)]);
+                }
             }
         }
     }
